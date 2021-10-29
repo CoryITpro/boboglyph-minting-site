@@ -9,7 +9,7 @@
     padding: 64px 0;
     display: grid;
     grid-template: auto / 1fr 1fr;
-    grid-column-gap: 24px;
+    grid-column-gap: 64px;
 
     @media (max-width: 768px) {
       grid-template: auto / 1fr;
