@@ -1,3 +1,4 @@
+import Header from "components/Header"
 import Minter from "components/Minter"
 
 const Dashboard = ({
@@ -11,6 +12,7 @@ const Dashboard = ({
   onMintHandler,
 }) => (
   <>
+    <Header />
     <Minter
       mintLoading={mintLoading}
       mintTotal={mintTotal}

@@ -1,1 +1,14 @@
 @import "../../styles/variable.scss";
+
+.header {
+  background-image: url("../../images/torino-egizio-01.jpg");
+  min-height: 700px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+
+  &-container {
+    max-width: 1280px;
+    margin: auto;
+  }
+}
