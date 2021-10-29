@@ -91,7 +91,6 @@ export const getCurrentMaxMint = async () => {
 
   try {
     let currentMaxMint = await contract.maxMint()
-    console.log(currentMaxMint)
 
     return ethers.BigNumber.from(currentMaxMint).toNumber()
   } catch (err) {

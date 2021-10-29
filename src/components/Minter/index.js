@@ -11,7 +11,6 @@ const Minter = ({
   walletAddress,
   onConnectWalletHandler,
   onMintHandler,
-  calculatePrice,
 }) => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
 
@@ -35,22 +34,41 @@ const Minter = ({
         </div>
         <div className="minter-mint">
           {Object.keys(timeLeft).length !== 0 ? (
-            <>
-              <p>Please select numbers of Boboglyph you want to mint.</p>
-              <div className="minter-mint-wrapper flex flex-column">
-                <div className="flex">
-                  <span onClick={decreaseMintValue}>-</span>
-                  <input
-                    type="text"
-                    value={mintInputValue}
-                    onChange={calculatePrice}
-                    readOnly
-                  />
-                  <span onClick={increaseMintValue}>+</span>
+            walletAddress === "" ? (
+              <>
+                <p>Please connect your wallet to start mint!</p>
+                <div className="minter-mint-wrapper flex flex-column">
+                  <button onClick={onConnectWalletHandler}>
+                    CONNECT WALLET
+                  </button>
                 </div>
-                <button>MINT</button>
-              </div>
-            </>
+              </>
+            ) : (
+              <>
+                <p>Please select numbers of Boboglyph you want to mint.</p>
+                <div className="minter-mint-wrapper flex flex-column">
+                  <button>
+                    {walletAddress.slice(0, 6) +
+                      " ... " +
+                      walletAddress.slice(38)}
+                  </button>
+                  <button>{mintTotal} ETH</button>
+                  <div className="flex">
+                    <span onClick={decreaseMintValue}>-</span>
+                    <input
+                      type="text"
+                      value={mintInputValue}
+                      onChange={() => {}}
+                      readOnly
+                    />
+                    <span onClick={increaseMintValue}>+</span>
+                  </div>
+                  <button onClick={() => !mintLoading && onMintHandler()}>
+                    {mintLoading ? "MINTING..." : "MINT"}
+                  </button>
+                </div>
+              </>
+            )
           ) : (
             <>
               <p>Public Sale will start in</p>

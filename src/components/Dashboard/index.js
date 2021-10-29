@@ -9,7 +9,6 @@ const Dashboard = ({
   walletAddress,
   onConnectWalletHandler,
   onMintHandler,
-  calculatePrice,
 }) => (
   <>
     <Minter
@@ -21,7 +20,6 @@ const Dashboard = ({
       walletAddress={walletAddress}
       onConnectWalletHandler={onConnectWalletHandler}
       onMintHandler={onMintHandler}
-      calculatePrice={calculatePrice}
     />
   </>
 )

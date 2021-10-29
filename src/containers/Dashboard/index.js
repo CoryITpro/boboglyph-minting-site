@@ -31,7 +31,6 @@ const Dashboard = () => {
       }
 
       let mintMax = await getCurrentMaxMint()
-      console.log(mintMax)
       setMaxMint(mintMax)
       let supplyMax = await getMaxSupply()
       setMaxSupply(supplyMax)
@@ -42,12 +41,16 @@ const Dashboard = () => {
     initDatas()
   }, [])
 
-  const calculatePrice = async () => {
-    let price = await getPrice(mintInputValue)
-    console.log(price)
+  useEffect(() => {
+    const calculatePrice = async () => {
+      let price = await getPrice(Number(mintInputValue))
+      console.log(price)
 
-    setMintTotal(price.toFixed(1))
-  }
+      setMintTotal(price.toFixed(3))
+    }
+
+    calculatePrice()
+  }, [mintInputValue])
 
   const onConnectWalletHandler = async () => {
     const walletResponse = await connectWallet()
@@ -121,7 +124,6 @@ const Dashboard = () => {
       walletAddress={walletAddress}
       onConnectWalletHandler={onConnectWalletHandler}
       onMintHandler={onMintHandler}
-      calculatePrice={calculatePrice}
     />
   )
 }
