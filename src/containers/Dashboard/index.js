@@ -44,7 +44,6 @@ const Dashboard = () => {
   useEffect(() => {
     const calculatePrice = async () => {
       let price = await getPrice(Number(mintInputValue))
-      console.log(price)
 
       setMintTotal(price.toFixed(3))
     }

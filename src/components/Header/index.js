@@ -20,11 +20,11 @@ const Header = () => {
     dots: false,
     infinite: true,
     arrows: false,
-    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplaySpeed: 1000,
-    autoPlay: true,
+    autoplaySpeed: 2000,
+    autoplay: true,
+    lazyLoad: "ondemand",
   }
 
   return (
