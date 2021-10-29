@@ -11,10 +11,26 @@ body {
 }
 
 * {
+  font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
+  outline: 0;
   box-sizing: border-box;
 }
 
 #root {
   width: 100%;
   background-color: $white;
+}
+
+.container {
+  width: 90%;
+  max-width: 1080px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
 }
