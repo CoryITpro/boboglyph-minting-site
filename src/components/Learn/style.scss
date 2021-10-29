@@ -1,0 +1,63 @@
+@import "../../styles/variable.scss";
+
+.learn {
+  width: 100%;
+  justify-content: center;
+  background-image: linear-gradient(180deg, #e8ae4bd4, #fbb040),
+    url("../../resources/gallery-banner.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &-wrapper {
+    padding: 64px 0;
+    display: grid;
+    grid-template: auto / 1fr 1fr;
+    grid-column-gap: 64px;
+
+    @media (max-width: 768px) {
+      grid-template: auto / 1fr;
+      grid-column-gap: 0px;
+      grid-row-gap: 16px;
+    }
+  }
+
+  &-title {
+    position: relative;
+    width: 100%;
+
+    @media (max-width: 425px) {
+      text-align: center;
+    }
+
+    & > img {
+      position: absolute;
+      top: -32px;
+      left: -32px;
+    }
+
+    & > span {
+      position: relative;
+      font-size: 48px;
+      color: $white;
+    }
+
+    & > p {
+      color: $black;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+
+  &-strategy {
+    width: 100%;
+    align-items: center;
+
+    & > p {
+      text-align: center;
+      color: $black;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  }
+}

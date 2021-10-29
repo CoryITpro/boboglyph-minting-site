@@ -1,4 +1,5 @@
 import Header from "components/Header"
+import Learn from "components/Learn"
 import Minter from "components/Minter"
 import Footer from "components/Footer"
 
@@ -14,6 +15,7 @@ const Dashboard = ({
 }) => (
   <>
     <Header />
+    <Learn />
     <Minter
       mintLoading={mintLoading}
       mintTotal={mintTotal}
