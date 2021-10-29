@@ -8,8 +8,9 @@ const Learn = () => (
         <img src={CircleSwish} alt="circle swish" loading="lazy" />
         <span>How does being an Association member work?</span>
         <p>
-          You need to connect metamask with the website & click mint button
-          after selecting the numbers you desire to mint.
+          There will be a standard voting system on how we will market the
+          project(s) and the AAoC executive team will always have the final say
+          when decisions are made.
         </p>
       </div>
       <div className="learn-strategy flex flex-column">
