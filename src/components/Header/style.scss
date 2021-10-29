@@ -1,7 +1,7 @@
 @import "../../styles/variable.scss";
 
 .header {
-  background-image: url("../../images/torino-egizio-01.jpg");
+  background-image: url("../../resources/torino-egizio-01.jpg");
   min-height: 700px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -10,5 +10,12 @@
   &-container {
     max-width: 1280px;
     margin: auto;
+  }
+  &-up-img-container {
+    width: 15%;
+  }
+  &-red-img {
+    width: 400px;
+    height: 401px;
   }
 }

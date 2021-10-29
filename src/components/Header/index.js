@@ -1,5 +1,5 @@
 import "./style.scss"
-import RedImg from "../../images/red-web.png"
+import { RedAAoC } from "../../resources"
 
 const Header = () => {
 
@@ -7,7 +7,7 @@ const Header = () => {
     <div className="header">
       <div className="header-container">
         <div className="header-up-img-continaer">
-          <img src={RedImg} alt="red-img" />
+          <img src={RedAAoC} alt="red-img" className="header-red-img" />
         </div>
       </div>
     </div>
