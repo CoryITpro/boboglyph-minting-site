@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { mintNFT } from "helpers/interact"
+import { connectWallet } from "helpers/wallet"
 import { generateInitIds, getDiffArray } from "helpers"
 import {
   getOccupiedIds,
@@ -30,6 +31,7 @@ const Dashboard = () => {
       }
 
       let mintMax = await getCurrentMaxMint()
+      console.log(mintMax)
       setMaxMint(mintMax)
       let supplyMax = await getMaxSupply()
       setMaxSupply(supplyMax)

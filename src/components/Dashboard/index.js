@@ -1,5 +1,4 @@
 import Minter from "components/Minter"
-import "./style.scss"
 
 const Dashboard = ({
   mintLoading,
@@ -12,7 +11,7 @@ const Dashboard = ({
   onMintHandler,
   calculatePrice,
 }) => (
-  <div className="dashboard">
+  <>
     <Minter
       mintLoading={mintLoading}
       mintTotal={mintTotal}
@@ -24,7 +23,7 @@ const Dashboard = ({
       onMintHandler={onMintHandler}
       calculatePrice={calculatePrice}
     />
-  </div>
+  </>
 )
 
 export default Dashboard
