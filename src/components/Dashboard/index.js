@@ -18,8 +18,8 @@ const Dashboard = ({
   <>
     <Header />
     <Green />
-    <Learn />
     <Membership />
+    <Learn />
     <Minter
       mintLoading={mintLoading}
       mintTotal={mintTotal}
