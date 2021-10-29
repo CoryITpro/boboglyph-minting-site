@@ -19,11 +19,6 @@ const Dashboard = ({
 }) => (
   <>
     <Header />
-    <Green />
-    <Membership />
-    <Learn />
-    <Advise />
-    <Roadmap />
     <Minter
       mintLoading={mintLoading}
       mintTotal={mintTotal}
@@ -34,6 +29,11 @@ const Dashboard = ({
       onConnectWalletHandler={onConnectWalletHandler}
       onMintHandler={onMintHandler}
     />
+    <Green />
+    <Membership />
+    <Learn />
+    <Advise />
+    <Roadmap />
     <Footer />
   </>
 )
