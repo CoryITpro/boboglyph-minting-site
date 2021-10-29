@@ -1,75 +1,68 @@
 @import "../../styles/variable.scss";
 
 .header {
+  width: 100%;
+  justify-content: center;
   background-image: url("../../resources/torino-egizio-01.jpg");
-  min-height: 700px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50%;
   padding: 60px 0;
 
-  &-container {
-    max-width: 1080px;
-    margin: auto;
-  }
-  &-up-img-container {
-    width: 20%;
-    @media screen and (max-width: 1100px) {
-      margin: auto;
+  &-logo {
+    width: 100%;
+    margin-bottom: 64px;
+
+    & > img {
+      width: 240px;
     }
   }
-  &-red-img {
-    max-width: 400px;
-    max-height: 401px;
-    width: 100%;
-  }
-  &-down-img-container {
-    display: flex;
-    flex-direction: row;
-    margin-top: 30px;
 
-    @media screen and (max-width: 1100px) {
-      flex-direction: column;
+  &-hero {
+    width: 100%;
+
+    @media (max-width: 768px) {
+      flex-direction: column !important;
       align-items: center;
     }
   }
 
-  &-slick-container {
-    width: 30%;
+  &-slick {
+    width: 320px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 32px;
+    }
 
     & img {
       width: 100%;
     }
-    @media screen and (max-width: 1100px) {
-      margin-bottom: 20px;
-      width: 50%;
-    }
   }
-  &-quote-container {
-    width: 58%;
-    padding: 10px 20px;
+  &-quote {
+    width: 100%;
+    padding: 16px 24px;
     background-color: $white;
-    margin-left: 10%;
+    margin-left: 64px;
 
-    & h1 {
-      font-size: 35px;
-      color: #333;
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-left: 0px;
     }
 
-    & h3 {
+    & > h1 {
+      font-size: 36px;
+      color: $black;
+    }
+
+    & > h3 {
       font-weight: 400;
-      color: #333;
+      color: $black;
       font-size: 22px;
     }
 
     & p {
       color: #666;
       font-size: 18px;
-    }
-
-    @media screen and (max-width: 1100px) {
-      width: 50%;
-      margin-left: 0;
     }
   }
 }
