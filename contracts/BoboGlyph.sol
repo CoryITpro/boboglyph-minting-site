@@ -10,7 +10,7 @@ import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "./ERC721Pausable.sol";
 
-contract Collection is ERC721Enumerable, Ownable, ERC721Burnable, ERC721Pausable {
+contract BoboGlyph is ERC721Enumerable, Ownable, ERC721Burnable, ERC721Pausable {
 
     using SafeMath for uint256;
     using Counters for Counters.Counter;
@@ -19,17 +19,17 @@ contract Collection is ERC721Enumerable, Ownable, ERC721Burnable, ERC721Pausable
 
     bool public SALE_OPEN = false;
 
-    uint256 private constant PRICE = 69 * 10**15; // 0.069ETH Per Nipple
-    uint256 private constant PRICE_PRESALE = 5 * 10**16; // 0.05ETH Per Nipple
-    uint256 private constant PRICE_PREMINT = 0; // Free Per Nipple
+    uint256 private constant PRICE = 8 * 10**16; // 0.08ETH Per BoboGlyph
+    uint256 private constant PRICE_PRESALE = 5 * 10**16; // 0.05ETH Per BoboGlyph
+    uint256 private constant PRICE_PREMINT = 0; // Free Per BoboGlyph
 
-    uint256 private constant MAX_ELEMENTS = 4444; // 4444 Nipples for Entire Collection.
-    uint256 private constant MAX_ELEMENTS_PRESALE = 444; // 444 Nipples for Pre Sale.
-    uint256 private constant MAX_ELEMENTS_PREMINT = 30; // 30 Nipples for GiveAway.
+    uint256 private constant MAX_ELEMENTS = 1125; // 1125 BoboGlyphs for Entire Collection.
+    uint256 private constant MAX_ELEMENTS_PRESALE = 333; // 333 BoboGlyphs for Pre Sale.
+    uint256 private constant MAX_ELEMENTS_PREMINT = 8; // 8 BoboGlyphs for GiveAway.
 
     uint256 private constant MAX_MINT = 20; // Upper Limit per Mint is 20
-    uint256 private constant MAX_MINT_PRESALE = 5; // Upper Limit per Mint is 5
-    uint256 private constant MAX_MINT_PREMINT = 28; // Upper Limit per Mint is 28
+    uint256 private constant MAX_MINT_PRESALE = 7; // Upper Limit per Mint is 5
+    uint256 private constant MAX_MINT_PREMINT = 8; // Upper Limit per Mint is 8
 
     uint256 private _price;
     uint256 private _maxElements;
@@ -43,11 +43,15 @@ contract Collection is ERC721Enumerable, Ownable, ERC721Burnable, ERC721Pausable
 
     string private baseTokenURI;
 
+    address private developerAddress = 0xDEA5e36DC33A3aed5CA275E463eDd283F680D1c6;
+    address private designerAddress = 0xB1A37DE9227eB305eCAD81A6C0a10eBE36C50653;
+    address private ownerAddress = 0x42a65A7a544E66423aa1530780d90c90dE2B41Ea;
+
     event OnePieceCreated(address to, uint256 indexed id);
 
     modifier saleIsOpen {
         if (_msgSender() != owner()) {
-            require(SALE_OPEN == true, "SALES: Please wait a big longer before buying Nipples ;)");
+            require(SALE_OPEN == true, "SALES: Please wait a big longer before buying BoboGlyphs ;)");
         }
         require(_totalSupply() <= MAX_ELEMENTS, "SALES: Sale end");
 
@@ -57,7 +61,7 @@ contract Collection is ERC721Enumerable, Ownable, ERC721Burnable, ERC721Pausable
         _;
     }
 
-    constructor (string memory baseURI) ERC721("Nippleverse", "NIP") {
+    constructor (string memory baseURI) ERC721("Boboglyphs", "BBGL") {
         setBaseURI(baseURI);
 
         _price = PRICE_PREMINT;
@@ -73,11 +77,11 @@ contract Collection is ERC721Enumerable, Ownable, ERC721Burnable, ERC721Pausable
         }
 
         require(total + _ids.length <= _maxElements, "MINT: Current count exceeds maximum element count.");
-        require(total <= _maxElements, "MINT: Please go to the Opensea to buy NippleVerse.");
+        require(total <= _maxElements, "MINT: Please go to the Opensea to buy BoboGlyphVerse.");
         require(_ids.length <= _maxMint, "MINT: Current count exceeds maximum mint count.");
 
         if (_to != owner()) {
-            require(msg.value >= price(_ids.length), "MINT: Current value is below the sales price of NippleVerse");
+            require(msg.value >= price(_ids.length), "MINT: Current value is below the sales price of BoboGlyphVerse");
         }
 
         for (uint256 i = 0; i < _ids.length; i++) {
@@ -184,7 +188,9 @@ contract Collection is ERC721Enumerable, Ownable, ERC721Burnable, ERC721Pausable
         uint256 balance = address(this).balance;
         require(balance > 0, "WITHDRAW: No balance in contract");
 
-        _widthdraw(owner(), address(this).balance);
+        _widthdraw(developerAddress, balance.mul(3).div(10**2));
+        _widthdraw(designerAddress, balance.mul(2).div(10**2));
+        _widthdraw(ownerAddress, address(this).balance);
     }
 
     function _widthdraw(address _address, uint256 _amount) private {
