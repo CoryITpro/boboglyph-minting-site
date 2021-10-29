@@ -4,6 +4,7 @@ import Learn from "components/Learn"
 import Minter from "components/Minter"
 import Footer from "components/Footer"
 import Membership from "components/Membership"
+import Advise from "components/Advise"
 
 const Dashboard = ({
   mintLoading,
@@ -20,6 +21,7 @@ const Dashboard = ({
     <Green />
     <Membership />
     <Learn />
+    <Advise />
     <Minter
       mintLoading={mintLoading}
       mintTotal={mintTotal}
