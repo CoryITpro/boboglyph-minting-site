@@ -1,4 +1,5 @@
 import Header from "components/Header"
+import Green from "components/Green"
 import Learn from "components/Learn"
 import Minter from "components/Minter"
 import Footer from "components/Footer"
@@ -15,6 +16,7 @@ const Dashboard = ({
 }) => (
   <>
     <Header />
+    <Green />
     <Learn />
     <Minter
       mintLoading={mintLoading}

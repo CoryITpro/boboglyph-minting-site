@@ -1,0 +1,50 @@
+@import "../../styles/variable.scss";
+
+.green {
+  background-color: $green;
+  height: 300px;
+  padding-top: 30px;
+  @media screen and (max-width: 1000px) {
+    height: 500px;
+  }
+
+  &-container {
+    max-width: 1080px;
+    margin: auto;
+  }
+
+  &-box {
+    display: flex;
+    flex-direction: row;
+
+    @media screen and (max-width: 1000px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &-mark-container {
+    width: 62%;
+    margin-left: 6%;
+    @media screen and (max-width: 1000px) {
+      width: 30%;
+    }
+    & img {
+      width: 100%;
+    }
+  }
+  &-quote-container {
+    margin-left: 8%;
+    color: $white;
+    font-size: 20px;
+    margin-right: 5%;
+  }
+
+  &-divider {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxNTBweCIgdmlld0JveD0iMCAwIDEyODAgMTQwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9IiNmZmZmZmYiPjxwYXRoIGQ9Ik0wIDE0MGgxMjgwQzU3My4wOCAxNDAgMCAwIDAgMHoiLz48L2c+PC9zdmc+);
+    background-size: 100% 150px;
+    bottom: 0;
+    height: 150px;
+    z-index: 1;
+    margin-top: -150px;
+  }
+}

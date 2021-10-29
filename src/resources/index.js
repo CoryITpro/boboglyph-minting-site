@@ -7,6 +7,7 @@ import HeroBanner from "./hero-banner.png"
 import GalleryBanner from "./gallery-banner.png"
 import CircleSwish from "./circle-swish.png"
 import RoadmapStep from "./roadmap-step.png"
+import Logomark from "./logomark-web.png"
 import Bobo1 from "./bobo1.png"
 import Bobo2 from "./bobo2.png"
 import Bobo3 from "./bobo3.png"
@@ -16,6 +17,7 @@ import Bobo6 from "./bobo6.png"
 import Bobo7 from "./bobo7.png"
 import Bobo8 from "./bobo8.png"
 import Bobo9 from "./bobo9.png"
+import GreenTrans from "./green-trans.svg"
 
 export {
   RedAAoC,
@@ -27,6 +29,7 @@ export {
   GalleryBanner,
   CircleSwish,
   RoadmapStep,
+  Logomark,
   Bobo1,
   Bobo2,
   Bobo3,
@@ -35,5 +38,6 @@ export {
   Bobo6,
   Bobo7,
   Bobo8,
-  Bobo9
+  Bobo9,
+  GreenTrans
 }
