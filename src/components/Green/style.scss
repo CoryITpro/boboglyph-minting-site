@@ -1,42 +1,42 @@
 @import "../../styles/variable.scss";
 
 .green {
+  width: 100%;
+  padding: 32px 0;
   background-color: $green;
-  height: 300px;
-  padding-top: 30px;
-  @media screen and (max-width: 1000px) {
-    height: 500px;
-  }
+  justify-content: center;
 
-  &-container {
-    max-width: 1080px;
-    margin: auto;
-  }
+  &-wrapper {
+    width: 100%;
 
-  &-box {
-    display: flex;
-    flex-direction: row;
-
-    @media screen and (max-width: 1000px) {
-      flex-direction: column;
+    @media (max-width: 768px) {
+      flex-direction: column !important;
       align-items: center;
     }
   }
-  &-mark-container {
-    width: 62%;
-    margin-left: 6%;
-    @media screen and (max-width: 1000px) {
-      width: 30%;
-    }
-    & img {
+
+  &-mark {
+    max-width: 320px;
+    width: 100%;
+
+    & > img {
       width: 100%;
     }
   }
-  &-quote-container {
-    margin-left: 8%;
+
+  &-quote {
+    width: 100%;
     color: $white;
-    font-size: 20px;
-    margin-right: 5%;
+    align-items: center;
+    font-size: 26px;
+    margin-left: 64px;
+
+    @media (max-width: 768px) {
+      font-size: 24px;
+      margin-left: 0px;
+      text-align: center;
+      padding-bottom: 64px;
+    }
   }
 
   &-divider {
