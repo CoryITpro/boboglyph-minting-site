@@ -1,4 +1,5 @@
 import Minter from "components/Minter"
+import Footer from "components/Footer"
 
 const Dashboard = ({
   mintLoading,
@@ -21,6 +22,7 @@ const Dashboard = ({
       onConnectWalletHandler={onConnectWalletHandler}
       onMintHandler={onMintHandler}
     />
+    <Footer />
   </>
 )
 
