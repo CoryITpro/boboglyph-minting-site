@@ -19,4 +19,17 @@
       text-align: center;
     }
   }
+
+  &-socials {
+    font-size: 36px;
+    margin-top: 24px;
+
+    & > a {
+      color: $green;
+
+      &:first-child {
+        margin-right: 16px;
+      }
+    }
+  }
 }
