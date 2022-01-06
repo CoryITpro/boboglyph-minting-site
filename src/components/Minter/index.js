@@ -33,7 +33,7 @@ const Minter = ({
           </p>
         </div>
         <div className="minter-mint">
-          {(Object.keys(timeLeft).length != 0) === 0 ? (
+          {Object.keys(timeLeft).length === 0 ? (
             walletAddress === "" ? (
               <>
                 <p>Please connect your wallet to start mint!</p>
