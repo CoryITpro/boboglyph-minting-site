@@ -71,7 +71,7 @@ const Minter = ({
             )
           ) : (
             <>
-              <p>Public Sale will start in</p>
+              <p>Sale will start in</p>
               <div className="minter-mint-clock">
                 <div className="minter-mint-clock-timer flex flex-column">
                   <div className="flex">
